@@ -9,6 +9,7 @@ CREATE TABLE musicians (
 );
 
 CREATE TABLE genre_musician (
+    id SERIAL PRIMARY KEY,
     music_genre_id INTEGER NOT NULL REFERENCES musis_genres(id),
     musician_id INTEGER NOT NULL REFERENCES musicians(id)
 );
@@ -20,6 +21,7 @@ CREATE TABLE albums (
 );
 
 CREATE TABLE musician_album (
+    id SERIAL PRIMARY KEY,
     musician_id INTEGER NOT NULL REFERENCES musicians(id),
     album_id INTEGER NOT NULL REFERENCES albums(id),
 );
@@ -38,6 +40,7 @@ CREATE TABLE collections (
 );
 
 CREATE TABLE song_collection (
+    id SERIAL PRIMARY KEY,
     song_id INTEGER NOT NULL REFERENCES songs(id),
     collection_id INTEGER NOT NULL REFERENCES collections(id)
 );
